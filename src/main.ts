@@ -2,25 +2,24 @@ import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
 import { dirname, join } from 'path';
-import { parse } from 'yaml'
-import { readFile } from 'fs/promises'
-import { SwaggerModule } from '@nestjs/swagger'
-import 'dotenv/config'
+import { parse } from 'yaml';
+import { readFile } from 'fs/promises';
+import { SwaggerModule } from '@nestjs/swagger';
+import 'dotenv/config';
 
-const PORT = process.env.PORT || 7000
+const PORT = process.env.PORT || 7000;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors()
+  app.enableCors();
   //------------my dev
-  app.useGlobalPipes(new ValidationPipe({
-    whitelist: true,
-    forbidNonWhitelisted: true
-  }))
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+    }),
+  );
 
-  app.useGlobalInterceptors(
-    new ClassSerializerInterceptor(
-      app.get(Reflector)
-    ))
+  app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
 
   const rootDirname = dirname(__dirname);
   const DOC_API = await readFile(join(rootDirname, 'doc', 'api.yaml'), 'utf-8');

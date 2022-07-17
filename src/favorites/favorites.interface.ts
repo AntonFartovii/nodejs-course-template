@@ -1,5 +1,3 @@
-import { Track } from '../tracks/tracks.interface';
-
 export interface Favorites {
   artists: string[]; // favorite artists ids
   albums: string[]; // favorite albums ids

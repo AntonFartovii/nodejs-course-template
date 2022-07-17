@@ -1,5 +1,4 @@
-import { Track } from '../tracks/tracks.interface';
-import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
 
 export interface Artists {
   id: string; // uuid v4

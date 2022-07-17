@@ -1,4 +1,3 @@
-import { User } from '../users/users.interface';
 import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export interface Track {

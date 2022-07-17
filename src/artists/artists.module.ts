@@ -4,7 +4,6 @@ import { ArtistsService } from './artists.service';
 import { DbService } from '../db/db.service';
 import { AlbumsModule } from '../albums/albums.module';
 import { TracksModule } from '../tracks/tracks.module';
-import { FavoritesService } from '../favorites/favorites.service';
 import { FavoritesModule } from '../favorites/favorites.module';
 
 @Module({
@@ -12,9 +11,9 @@ import { FavoritesModule } from '../favorites/favorites.module';
   imports: [
     forwardRef(() => FavoritesModule),
     forwardRef(() => TracksModule),
-    forwardRef(() => AlbumsModule)
+    forwardRef(() => AlbumsModule),
   ],
   providers: [ArtistsService, DbService],
-  exports: [ArtistsService]
+  exports: [ArtistsService],
 })
 export class ArtistsModule {}

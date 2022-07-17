@@ -1,5 +1,4 @@
-
-import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateUserDto {
   id: any;
@@ -12,14 +11,9 @@ export class CreateUserDto {
   @IsNotEmpty()
   password: string;
 
-
   version: number;
-
 
   createdAt: number;
 
-
   updatedAt: number;
-
 }
-

@@ -11,9 +11,9 @@ import { ArtistsModule } from '../artists/artists.module';
   imports: [
     forwardRef(() => FavoritesModule),
     forwardRef(() => ArtistsModule),
-    forwardRef(() => TracksModule)
+    forwardRef(() => TracksModule),
   ],
   providers: [AlbumsService, DbService],
-  exports: [AlbumsService]
+  exports: [AlbumsService],
 })
 export class AlbumsModule {}

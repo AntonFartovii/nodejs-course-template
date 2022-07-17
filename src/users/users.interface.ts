@@ -15,12 +15,14 @@ export class UserEntity {
 
   @Exclude()
   password: string;
+
   version: number;
+
   createdAt: number;
+
   updatedAt: number;
 
   constructor(partial: Partial<User>) {
     Object.assign(this, partial);
   }
-
 }

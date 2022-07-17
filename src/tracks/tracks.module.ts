@@ -14,8 +14,6 @@ import { FavoritesModule } from '../favorites/favorites.module';
     forwardRef(() => AlbumsModule),
   ],
   providers: [TracksService, DbService],
-  exports: [TracksService]
+  exports: [TracksService],
 })
 export class TracksModule {}
-
-
